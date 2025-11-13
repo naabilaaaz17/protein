@@ -4,16 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-validator": "^7.3.0",
     "mongodb": "^7.0.0",
-    "mongoose": "^8.19.3"
-
-  }
+    "mongoose": "^8.19.3",
+    "multer": "^2.0.2",
+    "node-fetch": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naabilaaaz17/backend_nabilaprotein.git"
+  },
+  "bugs": {
+    "url": "https://github.com/naabilaaaz17/backend_nabilaprotein/issues"
+  },
+  "homepage": "https://github.com/naabilaaaz17/backend_nabilaprotein#readme"
 }
+
