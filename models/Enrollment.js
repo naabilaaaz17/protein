@@ -1,16 +1,20 @@
 const mongoose = require("mongoose");
 
-const enrollmentSchema = new mongoose.Schema({
-  childName: { type: String, required: true },
-  childBirthday: { type: Date, required: true },
-  mainProgram: { type: String, enum: ["Preschool", "Learning Course"], required: true },
-  availableClass: { type: String },
+const EnrollmentSchema = new mongoose.Schema(
+  {
+    childName: { type: String, required: true },
+    gender: { type: String, required: true },
+    birthDate: { type: String, required: true },
+    religion: { type: String, required: true },
+    address: { type: String, required: true },
 
-  parentName: { type: String, required: true },
-  email: { type: String, required: true },
-  whatsapp: { type: String, required: true },
-  notes: { type: String },
+    parentName: { type: String, required: true },
+    email: { type: String, required: true },
+    whatsapp: { type: String, required: true },
 
-}, { timestamps: true });
+    familyCard: { type: String }, // path file upload
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("Enrollment", enrollmentSchema);
+module.exports = mongoose.model("Enrollment", EnrollmentSchema);
