@@ -21,4 +21,30 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/:id/reply", async (req, res) => {
+  try {
+    const { reply } = req.body;
+
+    const contact = await Contact.findByIdAndUpdate(
+      req.params.id,
+      {
+        reply,
+        replyDate: new Date(),
+        status: "Replied",
+      },
+      { new: true }
+    );
+
+    if (!contact) {
+      return res.status(404).json({ message: "Contact not found" });
+    }
+
+    res.json({ message: "Reply sent successfully", data: contact });
+
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 module.exports = router;

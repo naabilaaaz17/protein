@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 
-const paymentSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  amount: { type: Number, required: true },
-  method: { type: String, required: true },
-  receipt: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
-  status: { type: String, default: "Pending" },
+const PaymentSchema = new mongoose.Schema({
+  courseId: String,
+  courseName: String,
+  amount: Number,
+  billing: String,
+  proofUrl: String
 });
 
-module.exports = mongoose.model("Payment", paymentSchema);
+module.exports = mongoose.model("Payment", PaymentSchema);
